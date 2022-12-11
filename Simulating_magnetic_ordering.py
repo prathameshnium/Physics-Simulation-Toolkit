@@ -1,4 +1,4 @@
-#actual simulation test (canted magnetism)
+#actual simulation test (antiferro magnetism)
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
@@ -10,13 +10,13 @@ U=[]
 V=[]
 W=[]
 pi=3.14
-for i in range(40):
+for i in range(30):
     X.append(0)
     Y.append(i)
     Z.append(0)
-    U.append(np.sin(i))
+    U.append(0)
     V.append(0)
-    W.append(np.cos(i))
+    W.append(pow(-1,i))
 
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
@@ -30,16 +30,24 @@ ax.set_zlabel('Z')
 X1=[]
 Y1=[]
 Z1=[]
-
-for i in range(40):
+#for the curve passing through the tip
+for i in range(30):
     X1.append(X[i]+U[i])
     Y1.append(Y[i]+V[i])
     Z1.append(Z[i]+W[i])
 
 ax.plot3D(X1,Y1,Z1,c="red")
+mag_moment=0
 U1=V1=W1=0
 #vector addition of all magnetic moment
-for i in range(40):
+for i in range(30):
+    U1=U1+U[i]
+    V1=V1+V[i]
+    W1=W1+W[i]
+ax.quiver(0, 0, 0, U1, V1, W1,lw=5)
+U1=V1=W1=0
+#vector addition of all magnetic moment
+for i in range(30):
     U1=U1+U[i]
     V1=V1+V[i]
     W1=W1+W[i]
