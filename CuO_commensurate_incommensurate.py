@@ -1,4 +1,7 @@
 #actual simulation test (canted magnetism)
+
+%matplotlib notebook
+from ipywidgets import *
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 import numpy as np
@@ -9,10 +12,19 @@ Z=[]
 U=[]
 V=[]
 W=[]
+'''
+def update(A = 0.5, B = 0, C = 0.5):
 
-k1=0.4
+    line.set_ydata(f(x,A,B,C))
+
+
+    fig.canvas.draw_idle()
+    
+interact(update, A = (-1,1,0.1), B = (-1,1,0.1), C = (-1,1,0.1))
+'''
+k1=0.5
 k2=0
-k3=0.6
+k3=0.5
 k11=k33=0
 for i in range(40):
     X.append(0)
@@ -20,9 +32,9 @@ for i in range(40):
     Z.append(0)
     k11=k11+k1
     k33=k33+k3
-    U.append(pow(np.sin(k11),1))
+    U.append(2*pow(np.sin(k11*pi),1))
     V.append(0)
-    W.append(pow(np.sin(-k33),1))
+    W.append(2*pow(np.sin(-k33*pi),1))
 
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
@@ -55,5 +67,10 @@ for i in range(40):
 ax.quiver(0, 0, 0, U1, V1, W1,lw=5)
 
 """
+
+
+
+#0,146
 ax.view_init(0,146)
 plt.show()
+
