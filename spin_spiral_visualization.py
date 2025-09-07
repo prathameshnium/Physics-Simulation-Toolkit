@@ -1,5 +1,6 @@
 #actual simulation test (canted magnetism)
-# CuO_commensurate_incommensurate
+# commensurate_incommensurate (CuO like systems)
+# spin_spiral_visualization
 
 '''
 ======================================================================
@@ -62,9 +63,9 @@ for i in range(40):
     Z.append(0)
     k11=k11+k1
     k33=k33+k3
-    U.append(2*pow(np.sin(k11*pi),1))
-    V.append(0)
-    W.append(2*pow(np.sin(-k33*pi),1))
+   U.append(2 * np.sin(k11 * np.pi))
+   V.append(0)
+   W.append(2 * np.sin(-k33 * np.pi))
 
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
