@@ -1,4 +1,53 @@
 #Antiferromagnetic
+#Neel_Temprature_Simulation.py
+
+'''
+=======================================================================
+   1D Ising Model Simulation of a Magnetic Phase Transition
+=======================================================================
+Author:Prathamesh Deshmukh
+Date: 2025-09-07
+
+Description:
+-----------
+This script simulates the behavior of a one-dimensional chain of magnetic 
+spins using a simplified Ising-like model. It demonstrates how an ordered 
+magnetic state (like antiferromagnetism) transitions into a disordered 
+paramagnetic state as thermal noise increases.
+
+The net magnetization (represented by the 'Sum / Size') is plotted 
+against the 'Noise Level,' which acts as an analog for temperature.
+
+Methodology:
+-----------
+1.  An initial spin configuration is created (e.g., 'alternating' for an
+    antiferromagnetic ground state).
+2.  In each iteration, random noise is added to every spin in the chain,
+    simulating thermal fluctuations. An external 'field' is also applied,
+    which biases the spins in one direction.
+3.  The total net magnetization of the system is calculated.
+4.  The noise level is incrementally increased, and the process is repeated,
+    plotting the net magnetization at each step.
+
+Interpretation of the Plot:
+---------------------------
+The resulting plot shows the system's net magnetization as a function of
+noise (temperature). For an antiferromagnetic starting state, the net 
+magnetization should be near zero at low noise levels. As noise increases,
+the spins flip more randomly, and the external field's influence becomes
+more dominant, causing the net magnetization to rise towards the field
+direction, simulating the transition to a paramagnetic phase.
+
+Key Parameters:
+---------------
+- size: The number of spins in the 1D chain.
+- initial_noise_level: The starting "temperature."
+- field: Represents an external magnetic field.
+- initial_list_type: The ground state of the spin system ('alternating' 
+  for antiferromagnetic, 'ones' for ferromagnetic).
+
+'''
+
 import numpy as np
 import matplotlib.pyplot as plt
 
