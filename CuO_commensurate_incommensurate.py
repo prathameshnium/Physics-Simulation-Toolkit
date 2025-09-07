@@ -1,4 +1,34 @@
 #actual simulation test (canted magnetism)
+# CuO_commensurate_incommensurate
+
+'''
+======================================================================
+   Visualization of a 1D Helical Magnetic (Spin Spiral) Structure
+======================================================================
+Author: Prathamesh Deshmukh
+Date: PhD year 1
+
+Description:
+-----------
+This script models and visualizes a one-dimensional chain of magnetic 
+moments (spins) that form a helical or spiral pattern. This is a common 
+representation of incommensurate magnetic ordering or helimagnetism, 
+where the spin direction rotates progressively from one site to the next.
+
+Method:
+-------
+A series of vectors are generated along the Y-axis. The U (x) and W (z) 
+components of each vector are modulated by sine functions, causing the 
+spins to rotate in the X-Z plane as they propagate along Y. The result 
+is plotted using a 3D quiver plot.
+
+Key Parameters:
+---------------
+- k1: Controls the rate of spin rotation along the X-axis.
+- k3: Controls the rate of spin rotation along the Z-axis.
+
+'''
+
 
 %matplotlib notebook
 from ipywidgets import *
